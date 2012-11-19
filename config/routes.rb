@@ -1,4 +1,7 @@
 Musa::Application.routes.draw do
+  resources :works
+
+
   get "header/navbar"
 
   get "header/user_state"
