@@ -1,0 +1,27 @@
+<div class ="offset1">
+	<p id="notice"><%= notice %></p>
+
+	<p>
+	  <h2><b>Title:</b>
+	  <%= @work.title %></h2>
+	</p>
+
+	<p>
+	  <b>Date:</b>
+	  <%= @work.work_dated %>
+	</p>
+
+	<p>
+	  <b>P image:</b>
+	  <%= @work.p_image %>
+	</p>
+
+	<p>
+	  <b>Notes:</b>
+	  <%= @work.notes %>
+	</p>
+
+
+	<%= link_to 'Edit', edit_work_path(@work) %> |
+	<%= link_to 'Back', works_path %>
+</div>
