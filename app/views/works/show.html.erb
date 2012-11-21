@@ -5,15 +5,11 @@
 	  <h2><b>Title:</b>
 	  <%= @work.title %></h2>
 	</p>
-
 	<p>
 	  <b>Date:</b>
-	  <%= @work.work_dated %>
-	</p>
-
-	<p>
-	  <b>P image:</b>
-	  <%= @work.p_image %>
+	  <%= @work.work_dated.year %>
+	  <b> Primary image:</b><br>
+	  <%= image_tag @work.photo.url %>
 	</p>
 
 	<p>
@@ -23,5 +19,7 @@
 
 
 	<%= link_to 'Edit', edit_work_path(@work) %> |
-	<%= link_to 'Back', works_path %>
+	<%= link_to 'Back', works_path %> |
+
+
 </div>

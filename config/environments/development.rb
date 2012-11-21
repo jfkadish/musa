@@ -1,6 +1,6 @@
 Musa::Application.configure do
    # Settings specified here will take precedence over those in config/application.rb
-
+  Paperclip.options[:command_path] = "/usr/local/bin/"
   config.action_mailer.default_url_options = { :host => 'localhost:80' }
 
   # In the development environment your application's code is reloaded on

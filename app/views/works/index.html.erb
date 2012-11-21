@@ -1,9 +1,9 @@
-<div class ="offset1"><h2>Listing works</h2></div>
+<div class ="offset1"><h3>Catalog</h3></div>
 <div class = "offset1" >
-  <table width = "600px" border = "5px">
+  <table width = "400px" border = "1px">
     <tr>
       <th>Title</th>
-      <th>Date</th>
+      <th>Year</th>
       <th>P image</th>
       <th>Notes</th>
       <th></th>
@@ -14,7 +14,7 @@
   <% @works.each do |work| %>
     <tr>
       <td><%= work.title %></td>
-      <td><%= work.work_dated %></td>
+      <td><%= work.work_dated.year %></td>
       <td><%= work.p_image %></td>
       <td><%= work.notes %></td>
       <td><%= link_to 'Show', work %></td>

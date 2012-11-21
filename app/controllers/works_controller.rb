@@ -1,6 +1,9 @@
+
 class WorksController < ApplicationController
   # GET /works
   # GET /works.json
+
+
   def index
     @works = Work.all
 
@@ -80,4 +83,7 @@ class WorksController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
 end
+

@@ -2,9 +2,11 @@ Musa::Application.routes.draw do
   resources :works
 
 
+
   get "header/navbar"
 
   get "header/user_state"
+ 
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
