@@ -10,8 +10,18 @@
       <th></th>
       <th></th>
     </tr>
+    <tr>
+      <th>
+        <% form_tag request.path, :method => 'get' do %>
+          <% content_tag :label do %>
+            Search term:
+            <%= text_field_tag :search, params[:search] %>
+          <% end %>
+        <% end %>  
+    </tr>
 
   <% @works.each do |work| %>
+
     <tr>
       <td><%= work.title %></td>
       <td><%= work.work_dated.year %></td>
@@ -21,9 +31,11 @@
       <td><%= link_to 'Edit', edit_work_path(work) %></td>
       <td><%= link_to 'Destroy', work, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
     </tr>
+    <tr><td></td></tr>
   <% end %>
   </table>
 <br />
 
-<%= link_to 'New Work', new_work_path %>
+<%= link_to "New Work", new_work_path %>
+<%= will_paginate @works %>
 </div>

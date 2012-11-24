@@ -4,6 +4,10 @@ Musa::Application.routes.draw do
 
 
   get "header/navbar"
+  get "/home/index"
+  get "/home/biography"
+  get "/home/foundation"
+
 
   get "header/user_state"
  

@@ -3,14 +3,12 @@ class WorksController < ApplicationController
   # GET /works
   # GET /works.json
 
-
-  def index
-    @works = Work.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render :json => @works }
-    end
+   def index
+    @works = Work.search(params[:search], params[:page])
+  #  respond_to do |format|
+  #    format.html # index.html.erb
+  #    format.json { render :json => @works }
+    #end
   end
 
   # GET /works/1
@@ -49,6 +47,7 @@ class WorksController < ApplicationController
       if @work.save
         format.html { redirect_to @work, :notice => 'Work was successfully created.' }
         format.json { render :json => @work, :status => :created, :location => @work }
+        #Work.thumb(params[:id,:p_image])
       else
         format.html { render :action => "new" }
         format.json { render :json => @work.errors, :status => :unprocessable_entity }
@@ -65,6 +64,8 @@ class WorksController < ApplicationController
       if @work.update_attributes(params[:work])
         format.html { redirect_to @work, :notice => 'Work was successfully updated.' }
         format.json { head :no_content }
+
+        #Work.thumb(params[:id] , params[:photo])
       else
         format.html { render :action => "edit" }
         format.json { render :json => @work.errors, :status => :unprocessable_entity }

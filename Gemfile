@@ -13,6 +13,7 @@ gem 'therubyracer'
 gem 'devise'
 gem 'rmagick'
 gem 'paperclip'
+gem 'will_paginate'
 
 
 # Gems used only for assets and not required

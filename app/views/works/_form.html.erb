@@ -21,9 +21,9 @@
       <%= f.date_select :work_dated, {:end_year => 1910, :start_year => 1982, :discard_day => true, :discard_month => true} %>
     </div>
     <div class="field">
-      <%= f.label :Primary_Image %>
-      <%= file_field(:work, :photo) %>
-      <%= image_tag @work.photo.url %>
+      <%= f.label @work.photo %>
+      <%= file_field(:work, :photo) %><br>
+      <%= image_tag @work.photo.url.thumb %>
     </div>
     <div class="field">
       <%= f.label :Notes %>
