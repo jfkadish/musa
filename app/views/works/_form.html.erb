@@ -1,4 +1,4 @@
-<div class = "offset1" >
+<div>
   <%= form_for(@work, :html => {:multipart => true}) do |f| %>
     <% if @work.errors.any? %>
       <div id="error_explanation">
@@ -12,22 +12,22 @@
       </div>
     <% end %>
 
-    <div class="field">
+    <div class="field span5">
       <%= f.label :Title %>
       <%= f.text_field :title %>
     </div>
-    <div class="field" style = "width :100px">
+    <div class="field" >
       <%= f.label :Work_Dated %>
-      <%= f.date_select :work_dated, {:end_year => 1910, :start_year => 1982, :discard_day => true, :discard_month => true} %>
+      <%= f.date_select :work_dated, {:end_year => 1913, :start_year => 1980, :discard_day => true, :discard_month => true} %>
     </div>
-    <div class="field">
+    <div class="field span5 ">
       <%= f.label @work.photo %>
       <%= file_field(:work, :photo) %><br>
-      <%= image_tag @work.photo.url.thumb %>
+      <%= image_tag @work.photo.url(:thumb) %>
     </div>
-    <div class="field">
+    <div class="field notes">
       <%= f.label :Notes %>
-      <%= f.text_area :notes %>
+      <%= f.text_area :notes, :rows => 8 %>
     </div>
 
     <div class="actions">

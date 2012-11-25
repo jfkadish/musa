@@ -3,12 +3,13 @@ class WorksController < ApplicationController
   # GET /works
   # GET /works.json
 
-   def index
+
+  def index
     @works = Work.search(params[:search], params[:page])
-  #  respond_to do |format|
-  #    format.html # index.html.erb
-  #    format.json { render :json => @works }
-    #end
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render :json => @works }
+    end
   end
 
   # GET /works/1

@@ -1,37 +1,32 @@
-<div class ="offset1"><h3>Catalog</h3></div>
-<div class = "offset1" >
-  <table width = "400px" border = "1px">
+<div>
+   <h3>Catalog</h3>
+</div>
+<div>
+  <table class="table table-hover ">
     <tr>
-      <th>Title</th>
-      <th>Year</th>
-      <th>P image</th>
-      <th>Notes</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-    <tr>
-      <th>
-        <% form_tag request.path, :method => 'get' do %>
-          <% content_tag :label do %>
-            Search term:
-            <%= text_field_tag :search, params[:search] %>
-          <% end %>
-        <% end %>  
-    </tr>
+      <th class = "span1">Image</th>
+      <th class = "span1">Title</th>
+      <th class = "span1">Year</th>
+      <th class = "span3">Notes</th>
+      <th class = "span1">Acitons</th>
 
+    </tr>
+  
   <% @works.each do |work| %>
 
-    <tr>
+    <tr >
+      <td >
+          <%= link_to(work) do %>
+             <%= image_tag work.photo.url(:thumb) %>
+          <% end %></td>
       <td><%= work.title %></td>
       <td><%= work.work_dated.year %></td>
-      <td><%= work.p_image %></td>
-      <td><%= work.notes %></td>
-      <td><%= link_to 'Show', work %></td>
-      <td><%= link_to 'Edit', edit_work_path(work) %></td>
-      <td><%= link_to 'Destroy', work, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+      <td><%= truncate(work.notes, :length => 17) %></td>
+      <td><%= link_to 'Show', work %><br>
+      <%= link_to 'Edit', edit_work_path(work) %><br>
+      <%= link_to 'Remove', work, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
     </tr>
-    <tr><td></td></tr>
+    
   <% end %>
   </table>
 <br />
