@@ -1,7 +1,7 @@
 Musa::Application.configure do
    # Settings specified here will take precedence over those in config/application.rb
   Paperclip.options[:command_path] = "/usr/local/bin/"
-  config.action_mailer.default_url_options = { :host => 'localhost:80' }
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
@@ -36,4 +36,5 @@ Musa::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
 end

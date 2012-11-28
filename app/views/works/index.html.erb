@@ -1,9 +1,19 @@
-<div>
-   <h3>Catalog</h3>
-</div>
-<div>
-  <table class="table table-hover ">
-    <tr>
+<table class = "cattbl span12">
+  <tr>
+    <td class = "pull-left">
+      <div >
+        <h3>Catalog</h3>
+      </div>
+    </td>
+    <td>
+      <div class = "pull-right">
+        <%= will_paginate @works %>
+      </div>
+    </td>
+  </tr>
+</table>
+  <table class="table table-hover pull-left">
+    <tr >
       <th class = "span1">Image</th>
       <th class = "span1">Title</th>
       <th class = "span1">Year</th>
@@ -21,7 +31,7 @@
           <% end %></td>
       <td><%= work.title %></td>
       <td><%= work.work_dated.year %></td>
-      <td><%= truncate(work.notes, :length => 17) %></td>
+      <td><%= truncate(work.notes, :length => 280) %></td>
       <td><%= link_to 'Show', work %><br>
       <%= link_to 'Edit', edit_work_path(work) %><br>
       <%= link_to 'Remove', work, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
@@ -29,8 +39,22 @@
     
   <% end %>
   </table>
-<br />
+ 
 
-<%= link_to "New Work", new_work_path %>
-<%= will_paginate @works %>
-</div>
+<table class = "cattbl span12">
+  <tr>
+    <td class = "pull-left">
+      <div >
+        <h5><%= link_to "New Work", new_work_path %></h5>
+      </div>
+    </td>
+    <td>
+      <div class = "pull-right">
+        <%= will_paginate @works %>
+      </div>
+    </td>
+  </tr>
+</table>
+
+
+

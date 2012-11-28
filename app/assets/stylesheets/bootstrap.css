@@ -4218,7 +4218,6 @@ input[type="submit"].btn.btn-mini {
 .navbar .brand {
   display: block;
   float: left;
-  text-align: left;
   padding: 10px 20px 10px;
   margin-left: -20px;
   font-size: 20px;
@@ -4228,7 +4227,9 @@ input[type="submit"].btn.btn-mini {
 }
 
 .navbar .brand:hover {
+  color: #333333;
   text-decoration: none;
+  background-color: transparent;
 }
 
 .navbar-text {
@@ -5892,3 +5893,4 @@ a.badge:hover {
 .affix {
   position: fixed;
 }
+
