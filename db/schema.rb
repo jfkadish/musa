@@ -11,7 +11,36 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121128080527) do
+ActiveRecord::Schema.define(:version => 20121130193821) do
+
+  create_table "exhibition_works", :force => true do |t|
+    t.integer  "exhibition_id"
+    t.integer  "works_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "exhibition_works", ["exhibition_id", "works_id"], :name => "index_exhibition_works_on_exhibition_id_and_works_id"
+
+  create_table "exhibitions", :force => true do |t|
+    t.string   "exhibition_title"
+    t.string   "exhibition_url"
+    t.string   "venue"
+    t.date     "opening_date"
+    t.date     "closing_date"
+    t.string   "venue_address"
+    t.string   "venue_city"
+    t.string   "venue_country"
+    t.string   "curator"
+    t.string   "curator_email"
+    t.string   "curator_phone"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  add_index "exhibitions", ["curator"], :name => "index_exhibitions_on_curator"
+  add_index "exhibitions", ["exhibition_title"], :name => "index_exhibitions_on_exhibition_title"
+  add_index "exhibitions", ["venue"], :name => "index_exhibitions_on_venue"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

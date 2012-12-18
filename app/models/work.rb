@@ -1,7 +1,8 @@
 class Work < ActiveRecord::Base
   attr_accessible :work_dated, :notes, :p_image, :title, :photo
   has_attached_file :photo, styles: {thumb: "x100"}
-
+  belongs_to :exhibition
+  
 	def self.search(search, page)
 	  	paginate :per_page => 5, :page => page,
 		 	     :conditions => ['title like ?', "%#{search}%"], 

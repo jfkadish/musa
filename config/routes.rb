@@ -1,10 +1,13 @@
 Musa::Application.routes.draw do
+  resources :exhibitions
+
+
   devise_for :users
 
   resources :works
 
 
-
+  post "/exhibitions/addwork"
   get "header/navbar"
   get "/home/index"
   get "/home/biography"
